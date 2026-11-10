@@ -1,0 +1,17 @@
+9cad1ddce9e5a63143ba340c9520626b
+::res://::1794317731
+export_presets.cfg::TextFile::-1::1794317552::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::8872813934577315480::1794313567::1794314781::1::::<><><>0<>0<>b0c868db6b0773e743449ac346535a10<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+index.apple-touch-icon.png::CompressedTexture2D::8288593148214805450::1794317552::1794317742::1::::<><><>0<>0<>4c10859e84d98d41dee1c3d2d4a892aa<>res://.godot/imported/index.apple-touch-icon.png-8085a11cc297d91deb55511843765958.ctex::
+index.icon.png::CompressedTexture2D::7483451983378549388::1794317552::1794317742::1::::<><><>0<>0<>2723640d00382c393d5888e9d8170a1f<>res://.godot/imported/index.icon.png-5665fad188e88d1e882500a4376bfe02.ctex::
+index.png::CompressedTexture2D::5985396496987438548::1794317552::1794317742::1::::<><><>0<>0<>3cee91c911a666f67320a6e077a68a3a<>res://.godot/imported/index.png-5122033cac747157decad52589e2295c.ctex::
+::res://scenes/::1794317552
+HomeScene.tscn::PackedScene::5701448845639239864::1794313567::0::1::::<><><>0<>0<><>::
+::res://scenes/OldDrawingStuff/::1794317552
+button.gd::GDScript::773092768318174761::1794317552::0::1::::<>Button<><>0<>0<><>::
+control.gd::GDScript::5745205503030931971::1794317552::0::1::::<>Control<><>0<>0<><>::
+eraser_button.gd::GDScript::2995192224363659604::1794317552::0::1::::<>TextureButton<><>0<>0<><>::
+label.gd::GDScript::1434587009043961933::1794317552::0::1::::<>Label<><>0<>0<><>::
+node_2d.gd::GDScript::8176891923801770997::1794317552::0::1::::<>Node2D<><>0<>0<><>::
+whiteboard_task.gd::GDScript::349738644662463123::1794317552::0::1::::<>CanvasLayer<><>0<>0<><>::
+Whiteboard_task.tscn::PackedScene::8164594553834853186::1794317552::0::1::::<><><>0<>0<><>::uid://doq7hk6gddqsj::::res://scenes/OldDrawingStuff/node_2d.gd<>uid://cn4axvydpte5p::::res://scenes/OldDrawingStuff/control.gd

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dok8xdoxojdbm"]
+
+[ext_resource type="Script" uid="uid://doq7hk6gddqsj" path="res://scenes/OldDrawingStuff/node_2d.gd" id="1_1prki"]
+[ext_resource type="Script" uid="uid://cn4axvydpte5p" path="res://scenes/OldDrawingStuff/control.gd" id="1_od77l"]
+
+[node name="CanvasLayer2" type="CanvasLayer" unique_id=1694772369]
+layer = 11
+
+[node name="Control" type="Control" parent="." unique_id=1712743211]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control" unique_id=1976293733]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 30.0
+offset_right = 417.0
+offset_bottom = 230.0
+
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer" unique_id=1643516856]
+handle_input_locally = false
+size = Vector2i(350, 200)
+render_target_update_mode = 4
+
+[node name="Control2" type="Control" parent="Control/SubViewportContainer/SubViewport" unique_id=2127821958]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_od77l")
+
+[node name="ColorRect" type="ColorRect" parent="Control/SubViewportContainer/SubViewport/Control2" unique_id=1047995722]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/SubViewportContainer/SubViewport/Control2/ColorRect" unique_id=1654414032]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 336.0
+offset_bottom = 196.0
+mouse_filter = 2
+
+[node name="Node2D" type="Node2D" parent="Control/SubViewportContainer/SubViewport/Control2" unique_id=873773862]
+top_level = true
+script = ExtResource("1_1prki")
+
+[node name="Line2D" type="Line2D" parent="Control/SubViewportContainer/SubViewport/Control2/Node2D" unique_id=1460313514]
+points = PackedVector2Array(138, 83)
+closed = true
+width = 4.0
+default_color = Color(0, 0, 0, 1)
