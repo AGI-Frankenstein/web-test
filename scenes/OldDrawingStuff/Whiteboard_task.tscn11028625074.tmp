@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dok8xdoxojdbm"]
+
+[ext_resource type="Script" uid="uid://doq7hk6gddqsj" path="res://scenes/Tasks/Whiteboard/node_2d.gd" id="1_1prki"]
+[ext_resource type="Texture2D" uid="uid://cwnq8y6fjscnp" path="res://icon.svg" id="1_e715p"]
+
+[node name="Control" type="Control" unique_id=502523168]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1976293733]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 30.0
+offset_right = 404.0
+offset_bottom = 230.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1643516856]
+handle_input_locally = false
+size = Vector2i(350, 200)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport" unique_id=2127821958]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/Control" unique_id=1047995722]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/Control/ColorRect" unique_id=1654414032]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 35.0
+offset_right = 232.0
+offset_bottom = 163.0
+texture = ExtResource("1_e715p")
+
+[node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport/Control" unique_id=873773862]
+top_level = true
+script = ExtResource("1_1prki")
+
+[node name="Line2D" type="Line2D" parent="SubViewportContainer/SubViewport/Control/Node2D" unique_id=1460313514]
+closed = true
+width = 4.0
+default_color = Color(0, 0, 0, 1)

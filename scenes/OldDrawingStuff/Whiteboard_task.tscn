@@ -21,7 +21,7 @@ offset_bottom = 230.0
 
 [node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer" unique_id=1643516856]
 handle_input_locally = false
-size = Vector2i(350, 200)
+size = Vector2i(1000, 1000)
 render_target_update_mode = 4
 
 [node name="Control2" type="Control" parent="Control/SubViewportContainer/SubViewport" unique_id=2127821958]
@@ -43,13 +43,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/SubViewportContainer/SubViewport/Control2/ColorRect" unique_id=1654414032]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Control/SubViewportContainer/SubViewport/Control2" unique_id=1317647031]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 4.0
-offset_right = 336.0
-offset_bottom = 196.0
-mouse_filter = 2
+offset_left = 908.0
+offset_top = 525.0
+offset_right = 946.0
+offset_bottom = 562.0
 
 [node name="Node2D" type="Node2D" parent="Control/SubViewportContainer/SubViewport/Control2" unique_id=873773862]
 top_level = true
