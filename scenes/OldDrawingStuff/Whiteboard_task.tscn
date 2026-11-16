@@ -136,7 +136,6 @@ offset_right = 627.0
 offset_bottom = 618.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_hkanf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xw0pa")
-toggle_mode = true
 icon = ExtResource("3_xw0pa")
 icon_alignment = 1
 expand_icon = true
@@ -159,4 +158,5 @@ expand_icon = true
 [connection signal="pressed" from="Control2/Color1Button" to="Control2" method="_on_color_1_button_pressed"]
 [connection signal="pressed" from="Control2/Color2Button" to="Control2" method="_on_color_2_button_pressed"]
 [connection signal="pressed" from="Control2/Color3Button" to="Control2" method="_on_color_3_button_pressed"]
+[connection signal="pressed" from="Control2/EraserToggle" to="Control2" method="_on_eraser_toggle_pressed"]
 [connection signal="toggled" from="Control2/EraserToggle" to="Control2/SubViewportContainer/SubViewport/Node2D" method="_on_button_toggled"]

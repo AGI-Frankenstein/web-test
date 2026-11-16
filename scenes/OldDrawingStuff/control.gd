@@ -26,13 +26,6 @@ func _ready() -> void:
 	bttns.append(btnEraser)
 	bttns.append(btnUndo)
 	_resize_to_screen() # Resizes for the device screen size, adjust button positions and also changes button backgrounds
-	
-	var join_button = Button.new()
-	join_button.text = "Send"
-	join_button.pressed.connect(submit_image)
-	join_button.offset_top = 0
-	add_child(join_button)
-	
 	pass 
 
 func _process(_delta: float) -> void:
@@ -50,14 +43,20 @@ func submit_image() -> void:
 	# TODO: add exporting the set image for processing, will need to filter white to transparent 
 	# If we are displaying bones for drawing, should we remove them or keep them in the final monster? 
 	# If remove, add full transparency to the bone before grabbing the img 
-	var img: Image = svp.get_texture().get_image() # This image "Should" be what is on the drawing space
-	var bytes = img.get_data()
-	$Client.send_image(bytes, img.get_width(), img.get_height())
+	var img: Image = svp.get_texture().get_image()
+	var pkd: PackedByteArray = img.get_data() # This image "Should" be what is on the drawing space
+
+	var tex: Image = Image.create_from_data(10, 10, true, Image.Format.FORMAT_ASTC_4x4, pkd)
+	print(type_string(typeof(tex)))
+	print(type_string(typeof(img)))
+	print(img)
+	print(tex)
 	return
 
 func _resize_to_screen() -> void:
 	var sz = get_viewport().get_visible_rect().size
 	var buttonsizes = sz[1]*0.15
+	# here
 	sz[1] = sz[1]*0.8
 	svp.size = sz
 	for button in bttns:
@@ -88,9 +87,13 @@ func get_color() -> Color:
 
 func _on_color_1_button_pressed() -> void:
 	color = roundcolor[0]
+	submit_image()
 
 func _on_color_2_button_pressed() -> void:
 	color = roundcolor[1]
 
 func _on_color_3_button_pressed() -> void:
 	color = roundcolor[2]
+
+func _on_eraser_toggle_pressed() -> void:
+	color = roundcolor[3]

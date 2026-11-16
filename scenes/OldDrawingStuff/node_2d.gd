@@ -12,15 +12,12 @@ var _selected_color: Color = Color.BLUE
 func _input(event: InputEvent) -> void:
 	_get_active_color()
 	
-	if _eraser == true:
-		_selected_color = Color.WHITE
-
 	if event is InputEventScreenTouch:
 		_pressedleft = event.pressed
 		if _pressedleft:
 			_current_line = Line2D.new()
 			_current_line.default_color = _selected_color
-			if _eraser == true:
+			if _selected_color == Color.WHITE:
 				_current_line.width = 36
 			else:
 				_current_line.width = 12
@@ -35,7 +32,7 @@ func _input(event: InputEvent) -> void:
 			if _pressedright:
 				_current_line = Line2D.new()
 				_current_line.default_color = _selected_color
-				if _eraser == true:
+				if _selected_color == Color.WHITE:
 					_current_line.width = 12
 				else:
 					_current_line.width = 2
