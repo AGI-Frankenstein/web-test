@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var _lines:Node2D = $Line2D
-@onready var _ctrl: = get_parent()
+@onready var _ctrl: = get_parent().get_parent().get_parent()
 
 var _pressedright: bool = false
 var _pressedleft: bool = false
@@ -12,15 +12,21 @@ var _selected_color: Color = Color.BLUE
 func _input(event: InputEvent) -> void:
 	_get_active_color()
 	
+	if _eraser == true:
+		_selected_color = Color.WHITE
+
 	if event is InputEventScreenTouch:
 		_pressedleft = event.pressed
 		if _pressedleft:
 			_current_line = Line2D.new()
 			_current_line.default_color = _selected_color
-			_current_line.width = 12
+			if _eraser == true:
+				_current_line.width = 36
+			else:
+				_current_line.width = 12
 			_lines.add_child(_current_line)
 			_current_line.add_point(event.position)
-	elif event is InputEventScreenDrag and _pressedleft and _eraser:
+	elif event is InputEventScreenDrag and _pressedleft:
 		_current_line.add_point(event.position)
 
 	if event is InputEventMouseButton:
@@ -29,7 +35,10 @@ func _input(event: InputEvent) -> void:
 			if _pressedright:
 				_current_line = Line2D.new()
 				_current_line.default_color = _selected_color
-				_current_line.width = 2
+				if _eraser == true:
+					_current_line.width = 12
+				else:
+					_current_line.width = 2
 				_lines.add_child(_current_line)
 				_current_line.add_point(event.position)
 	elif event is InputEventMouseMotion and _pressedright:
@@ -38,8 +47,5 @@ func _input(event: InputEvent) -> void:
 func _get_active_color() -> void:
 	_selected_color = _ctrl.get_color()
 
-#func _ready() -> void:
-	#pass 
-
-#func _process(delta: float) -> void:
-	#pass
+func _on_button_toggled(toggled_on: bool) -> void:
+	_eraser = toggled_on
